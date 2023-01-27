@@ -5,7 +5,7 @@ The `urlpatterns` list routes URLs to views. For more information please see:
 Examples:
 Function views
     1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+    2. Add a URL to urlpatterns:  path('', views.home, name='home') {{Url design pattern}}
 Class-based views
     1. Add an import:  from other_app.views import Home
     2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
@@ -22,8 +22,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # to inclide admin page
-    path('', include('base.urls')),  #to redirect urls to base/urls
-    # path('', RedirectView.as_view(url='base/')),  #to change the specific urls
+    path('base/', include('base.urls')),  #to redirect urls to base/urls
+    path('', RedirectView.as_view(url='base/')),  #to change the specific urls
 ] 
 # + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) #to add static files in devlopement
 
