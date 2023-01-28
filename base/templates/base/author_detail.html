@@ -10,7 +10,7 @@
 
 
   <div style="margin-left:20px;margin-top:20px">
-    <h4>Book's written by {{author.first_name}} {{author.last_name}}</h4>
+    <h4>Book written by {{author.first_name}} {{author.last_name}}</h4>
 
     {% for book in author.book_set.all %}
       <h3><a href="">{{book.title}}</a></h3>

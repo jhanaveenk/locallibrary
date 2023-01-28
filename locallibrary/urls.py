@@ -22,7 +22,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # to inclide admin page
-    path('base/', include('base.urls')),  #to redirect urls to base/urls
+    path('', include('base.urls')),  #to redirect urls to base/urls
     path('', RedirectView.as_view(url='base/')),  #to change the specific urls
 ]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) #to add static files in devlopement
 
+urlpatterns += [
+    path('', include('django.contrib.auth.urls')),
+]
